@@ -1,0 +1,19 @@
+
+<input type="button" class="btn btn-info" value="商品描述" [routerLink]="['./']"/>
+<input type="button" class="btn btn-primary" value="销售员信息" [routerLink]="['./seller', 99]"/>
+<router-outlet></router-outlet>
+
+<div *ngFor="let product of products" class="col-lg-4 col-sm-6 no-margin" style="float: left">
+  <div class="img-thumbnail">
+    <img class="img-fluid" [src]="imgUrl"/>
+    <div class="figure-caption">
+      <span class="pull-left col-7 product-title">{{product.title}}</span>
+      <span class="pull-right col-5 product-price">{{product.price}}元</span>
+      <span class="col-12 product-desc">{{product.desc}}</span>
+    </div>
+    <div>
+      <app-stars [rating]="product.rating"></app-stars>
+    </div>
+  </div>
+</div>
+
